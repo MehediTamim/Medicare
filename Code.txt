@@ -77,20 +77,7 @@ namespace SE
             Doctor obj = new Doctor();
             if (obj.Check_Registration() == true)
             {
-                Console.WriteLine("Enter The name: ");
-                x = Console.ReadLine();
-                Console.WriteLine("Enter The Address: ");
-                y = Console.ReadLine();
-                Console.WriteLine("Enter The Email: ");
-                z = Console.ReadLine();
-                Console.WriteLine("Enter The Number: ");
-                p = Convert.ToInt32(Console.ReadLine());
-                obj.Create_Profile(x, y, z, p);
-                Console.WriteLine("Enter The name: ");
-                x = Console.ReadLine();
-                Console.WriteLine("Enter The Number: ");
-                p = Convert.ToInt32(Console.ReadLine());
-                obj.Log_in(x, p);
+               
                 Console.WriteLine("Enter The Comment: ");
                 x = Console.ReadLine();
                 Console.WriteLine("Enter The Blood Group: ");
