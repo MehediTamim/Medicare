@@ -1,0 +1,106 @@
+using System;
+
+namespace SE
+{
+    class Doctor
+    {
+        private String Name = null;
+        private String Id = null;
+        private String Address = null;
+        private String Email = null;
+        private String Comment = null;
+        private String BloodGroup = null;
+        private bool Pressure = true;
+        private bool Diabetes = true;
+        private bool Payment = true;
+        private int  Number = 0;
+
+        public bool Check_Registration()
+        {
+           return true;
+        }
+        public void Create_Profile(String Name, String Address, String Email, int Number)
+        {
+            this.Name = Name;
+            this.Id = Convert.ToString(Number);
+            this.Address = Address;
+            this.Email = Email;
+            this.Number = Number;
+        }
+        public bool Log_in(String Name, int Number)
+        {
+            if (Equals(Number, Number))
+            { return true; }
+            else
+            {
+                return false;
+            }
+        }
+        public void Record_Consultation(  String Comment, String BloodGroup ,bool Pressure,bool Diabetes )
+        {
+            this.Comment = Comment;
+            this.BloodGroup = BloodGroup;
+            this.Pressure = Pressure;
+            this.Diabetes = Diabetes;
+        }
+        public string medicine_list()
+        {
+            string x = "napa";
+            return x;
+        }
+        public string Test_list()
+        {
+            string x = "X-Ray";
+            return x;
+        }
+        public int make_bill()
+        {
+            int x = 500;
+            return x;
+        }
+        public void notify()
+        {
+            Console.WriteLine("Next APPOintment 20/12/2021");
+        }
+
+
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            bool a= true;
+            bool b = true;
+            String x, y, z;
+            int p;
+            Doctor obj = new Doctor();
+            if (obj.Check_Registration() == true)
+            {
+                Console.WriteLine("Enter The name: ");
+                x = Console.ReadLine();
+                Console.WriteLine("Enter The Address: ");
+                y = Console.ReadLine();
+                Console.WriteLine("Enter The Email: ");
+                z = Console.ReadLine();
+                Console.WriteLine("Enter The Number: ");
+                p = Convert.ToInt32(Console.ReadLine());
+                obj.Create_Profile(x, y, z, p);
+                Console.WriteLine("Enter The name: ");
+                x = Console.ReadLine();
+                Console.WriteLine("Enter The Number: ");
+                p = Convert.ToInt32(Console.ReadLine());
+                obj.Log_in(x, p);
+                Console.WriteLine("Enter The Comment: ");
+                x = Console.ReadLine();
+                Console.WriteLine("Enter The Blood Group: ");
+                y = Console.ReadLine();
+                obj.Record_Consultation(x, y, a, b);
+                Console.WriteLine("MEDICINES: " + obj.medicine_list());
+                Console.WriteLine("Tests: " + obj.Test_list());
+                Console.WriteLine("Bill: " + obj.make_bill());
+                obj.notify();
+            }    
+        }
+    }
+}
